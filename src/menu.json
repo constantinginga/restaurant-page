@@ -1,0 +1,38 @@
+{
+    "items": [
+        {
+            "name": "Foraged Salad",
+            "description": "Made from whatever our Ranger found"
+        },
+        {
+            "name": "Stuffed Eggs",
+            "description": "Made in the style of the devil"
+        },
+        {
+            "name": "Roast Goose",
+            "description": "Butchered fresh to order"
+        },
+        {
+            "name": "Stew",
+            "description": "With meat and vegetables, served in a trench"
+        },
+        {
+            "name": "Sandwich",
+            "description": "With roast meat in meat sauce"
+        },
+        {
+            "name": "The Fancyman's Feast",
+            "description": "Our finest meats, cheeses, fruits, and nuts. You must commit to marrying our eldest daughter."
+        },
+        {
+            "name": "The Commoner's Feast",
+            "description": "Whatever's left of the Fancyman's Feast"
+        },
+        {
+            "name": "Scones",
+            "description": "Served warm with butter and jam"
+        }
+    ],
+    "msg": "As you would expect with all good medieval banquets, wine and ale are included with your meal!",
+    "warning": "Menu may vary with the season"
+}

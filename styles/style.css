@@ -1,0 +1,74 @@
+:root {
+    --transparent: rgba(255, 255, 255, .1);
+    --black: rgba(0, 0, 0, .7);
+    --white: rgba(255, 255, 255, .9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 10px;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Oldenburg', cursive;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#content {
+    height: 100vh;
+    backdrop-filter: blur(1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem;
+    color: var(--white);
+}
+
+#welcome h1 {
+    font-size: 5rem;
+    letter-spacing: .05rem;
+}
+
+#welcome p {
+    font-size: 2.25rem;
+    letter-spacing: .01rem;
+    margin-top: .8rem;
+    text-align: center;
+}
+
+#nav {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#aboutBtn, #menuBtn {
+    user-select: none;
+    cursor: pointer;
+    padding: 1.5rem 3.5rem;
+    font-size: 3rem;
+    color: var(--white);
+    transition: ease .2s;
+}
+
+#aboutBtn:hover, #menuBtn:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transform: scale(1.1);
+    transition: ease-in .2s;
+}
