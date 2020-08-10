@@ -1,39 +1,46 @@
-export {createNav};
-export default function generateHomepage(parent) {
-    const home = document.createElement("div");
-    home.appendChild(createWelcomeTxt());
-    home.appendChild(createNav());
-    home.id = 'home';
-    parent.appendChild(home);
-    document.body.style.backgroundImage = 'url("../images/home.jpg")';
+export {elem, generateHeader, generateHome};
+
+function generateHome(parent) {
+    const welcome = elem.create('div', 'welcome', ''),
+        welcomeTxt = [
+            elem.create('h1', 'welcome-msg', 'The Medieval Feast'),
+            elem.create('p', 'welcome-desc', 'Forget the noise of daily life and travel back to simpler times.')];
+    elem.append(welcome, ...welcomeTxt);
+    parent.appendChild(welcome);
 }
 
 
-function createWelcomeTxt() {
-    const welcome = document.createElement("div"),
-        h1 = document.createElement("h1"), 
-        p = document.createElement("p");
-    
-    h1.textContent = 'Welcome to The Medieval Feast!';
-    p.textContent = 'Forget the noise of daily life and travel back to simpler times.';
-    welcome.appendChild(h1);
-    welcome.appendChild(p);
-    welcome.id = 'welcome';
-    return welcome;
+function generateHeader(parent) {
+    const header = elem.create('header', 'header', ''),
+        logo = elem.create('img', 'logo', ''),
+        logoDiv = elem.create('div', 'logo-div', '');
+    logo.src = '../images/castle.png';
+    logoDiv.appendChild(logo);
+    elem.append(header, logoDiv, createNav());
+    parent.appendChild(header);
 }
 
 
 function createNav() {
-    const nav = document.createElement("div"),
-        about = document.createElement("div"),
-        menu = document.createElement("div");
-    
-    about.innerHTML = 'About';
-    about.id = 'aboutBtn';
-    menu.innerHTML = 'Menu';
-    menu.id = 'menuBtn';
-    nav.appendChild(about);
-    nav.appendChild(menu);
-    nav.id = 'nav';
+    const nav = elem.create('div', 'nav', ''),
+        navElements = [
+            elem.create('div', 'about', 'About'),
+            elem.create('div', 'menu', 'Menu')];
+    elem.append(nav, ...navElements);
     return nav;
+}
+
+
+const elem = {
+    // create a node
+    create(type, id, text) {
+        const item = document.createElement(type);
+        item.innerHTML = text;
+        item.id = id;
+        return item;
+    },
+    // append multiple nodes to the same parent
+    append(parent, ...args) {
+        args.forEach(item => parent.appendChild(item));
+    }
 }
