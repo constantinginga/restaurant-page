@@ -18,5 +18,6 @@ export default function generateMenu(parent) {
             document.createElement("hr"));
     }
     elem.append(menuDiv, h1, ...menuNodes, ...msg);
+    menuDiv.classList.add('fadeIn');
     parent.appendChild(menuDiv);
 }

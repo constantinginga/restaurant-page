@@ -1,14 +1,13 @@
-/* TO-DO:
-    Add 'about' module; Style 'about' section; Make all pages responsive; add animations on page change;*/
-
 import {generateHeader, generateHome} from './home.js';
 import generateMenu from './menu.js';
 import generateAbout from './about.js';
+
 
 const content = document.querySelector('#content');
 // on page load
 generateHeader(content);
 generateHome(content);
+
 
 // nav buttons
 const menu = document.querySelector('#menu'),

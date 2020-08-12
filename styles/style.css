@@ -1,5 +1,5 @@
 :root {
-    --red: rgb(223, 52, 15);
+    --red: rgb(217, 51, 62);
 }
 
 * {
@@ -9,15 +9,15 @@
 }
 
 html, body {
-    font-size: 10px;
     height: 100vh;
+    font-size: 10px;
 }
 
 body {
+    height: 100vh;
     font-family: 'Baloo Tamma 2', cursive;
-    background: url("../images/bg.jpeg") no-repeat;
+    background: url("../images/bg.jpeg") no-repeat center center fixed;
     background-size: cover;
-    background-position: center 0;
 }
 
 #content {
@@ -25,7 +25,6 @@ body {
     padding: 4rem;
     color: #fff;
 }
-
 
 #header {
     user-select: none;
@@ -71,7 +70,7 @@ body {
 
 #welcome, #menuDiv, #aboutDiv {
     width: 100rem;
-    margin: 8rem 0;
+    margin-top: 8rem;
 }
 
 #welcome, #h1 {
@@ -97,10 +96,11 @@ body {
 
 #h1 {
     font-size: 5rem;
+    color: var(--red);
 }
 
 hr {
-    border: .2rem solid var(--red);
+    border: .1rem solid #fff;
     width: 80%;
     margin: .8rem auto;
 }
@@ -112,10 +112,73 @@ hr {
     letter-spacing: .1rem;
 }
 
-#item-name {
+#item-name, #aboutDiv p {
     font-size: 3rem;
+    text-align: center;
 }
 
 #msg, #item-desc, #warning {
     font-size: 1.5rem;
+}
+
+@media (max-width: 1800px) {
+    html, body {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 1650px) {
+    html, body {
+        font-size: 8.5px;
+    }
+}
+
+@media (max-width: 1550px) {
+    #welcome, #menuDiv, #aboutDiv {
+        width: 80rem;
+    }
+    hr {
+        width: 100%;
+    }
+    #welcome-msg {
+        font-size: 7.5rem;
+    }
+    #welcome-desc {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1250px) {
+    #menuDiv, #aboutDiv {
+        width: 60rem;
+        margin-left: 5rem;
+    }
+    #welcome {
+        margin-top: 20rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 960px) {
+    #menuDiv, #aboutDiv {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 720px) {
+    #welcome-msg {
+        font-size: 5.5rem;
+    }
+    #welcome-desc {
+        font-size: 2rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeIn {
+    animation: fadeIn 1s;
 }

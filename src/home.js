@@ -1,11 +1,13 @@
 export {elem, generateHeader, generateHome};
 
+
 function generateHome(parent) {
     const welcome = elem.create('div', 'welcome', ''),
         welcomeTxt = [
             elem.create('h1', 'welcome-msg', 'The Medieval Feast'),
             elem.create('p', 'welcome-desc', 'Forget the noise of daily life and travel back to simpler times.')];
     elem.append(welcome, ...welcomeTxt);
+    welcome.classList.add('fadeIn');
     parent.appendChild(welcome);
 }
 
@@ -35,8 +37,8 @@ const elem = {
     // create a node
     create(type, id, text) {
         const item = document.createElement(type);
-        item.innerHTML = text;
-        item.id = id;
+        if (text) item.innerHTML = text;
+        if (id) item.id = id;
         return item;
     },
     // append multiple nodes to the same parent
