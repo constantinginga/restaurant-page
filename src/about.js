@@ -1,4 +1,4 @@
-import {elem} from './home.js';
+import {red, elem} from './home.js';
 
 
 export default function generateAbout(parent) {
@@ -10,9 +10,14 @@ export default function generateAbout(parent) {
         'You can find us at 311 Rock Creek Drive, in Bethpage, NY, between 5AM and 11PM on any day of the week!'],
         descElements = [];
         
-
-    desc.forEach(line => descElements.push(elem.create('p', '', line)));
+    desc.forEach(line => {
+        let aboutLine = elem.create('p', 'about-line', line);
+        aboutLine.style.cssText = `font-size: 3rem;`;
+        descElements.push(aboutLine);
+    });
+    h1.style.cssText = `font-size: 5rem; color: ${red};`;
     elem.append(aboutDiv, h1, ...descElements);
+    aboutDiv.style.cssText = `width: 100rem; margin-top: 8rem; text-align: center;`;
     aboutDiv.classList.add('fadeIn');
     parent.appendChild(aboutDiv);
 }
