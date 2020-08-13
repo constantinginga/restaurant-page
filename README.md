@@ -1,4 +1,4 @@
-# restaurant-page
+# Restaurant Page
 
 > Built with npm and webpack.
 
