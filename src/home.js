@@ -13,7 +13,10 @@ function generateHome(parent) {
     welcomeTxt[1].style.cssText = `font-size: 3rem; letter-spacing: .1rem; font-weight: 700;`;
     elem.append(welcome, ...welcomeTxt);
     welcome.style.cssText = `width: 100rem; margin-top: 8rem; text-align: center;`;
+
+    // trigger anim
     welcome.classList.add('fadeIn');
+    welcome.addEventListener('animationend', e => welcome.classList.remove('fadeIn'));
     parent.appendChild(welcome);
 }
 
@@ -23,11 +26,14 @@ function generateHeader(parent) {
         logo = elem.create('img', 'logo', ''),
         logoDiv = elem.create('div', 'logo-div', '');
 
-    logo.src = '../images/castle.png';
+    // set css
+    logo.src = 'https://i.imgur.com/FMuTh9B.png';
     logo.style.cssText = `width: 100%; height: 100%;`;
     logoDiv.style.cssText = `cursor: pointer; width: 10rem; height: 10rem; padding: 2rem;
         border-radius: 50%; background-color: ${red}`;
     header.style.cssText = `user-select: none; display: flex;`;
+
+    // append elems
     logoDiv.appendChild(logo);
     elem.append(header, logoDiv, generateNav());
     parent.appendChild(header);
@@ -50,6 +56,7 @@ function generateNav() {
         });
         element.addEventListener('mouseout', e => element.style.color = `#fff`);
     });
+    
     elem.append(nav, ...navElements);
     nav.style.cssText = `margin-left: 5rem; display: flex; align-items: center; text-transform: uppercase;`;
     return nav;
